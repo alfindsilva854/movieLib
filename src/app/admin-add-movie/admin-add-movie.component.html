@@ -1,0 +1,20 @@
+<div class="container text-center mt-5">
+    <h1 style="color: white;">Add New Movie</h1>
+</div>
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div style="border: 1px yellow solid; border-radius: 25px;" class="w-50 p-5">
+        <form [formGroup]="addMoiveForm">
+            <input formControlName="mname" type="text" placeholder="Movie name" id="mn1" name="mname" class="form-control mt-3 text-center">
+            <input formControlName="description" type="text" placeholder="Movie description" id="md1" name="mdes" class="form-control mt-3 text-center">
+            <input formControlName="tprice" type="text" placeholder="Total Revenue" id="mt1" name="mtic" class="form-control mt-3 text-center">
+            <input formControlName="image" type="text" placeholder="Movie image" id="mimg1" name="mimg" class="form-control mt-3 text-center">
+            <input formControlName="rating" type="number" placeholder="Movie rating 0/10" id="mr1" name="mrat" class="form-control mt-3 text-center">
+            <input formControlName="tavailable" type="text" placeholder="Duration" id="mr1" name="mrat" class="form-control mt-3 text-center">
+            <input formControlName="tavailable" type="number" placeholder="Category" id="ct1" name="ct" class="form-control mt-3 text-center">
+          <div class="text-center">
+            <button (click)="addNewMovie()" class="btn btn-outline-light  mt-5" routerLink="/admin-moviemng" >Add Movie</button>
+        </div>
+       </form>
+    </div>
+</div>

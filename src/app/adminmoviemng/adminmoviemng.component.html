@@ -1,0 +1,61 @@
+<nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+      <a class="navbar-brand fa-2x " href="#!">Movie-Library</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <input  class="form-control w-50 ms-5 " type="text" placeholder=" Search For Movies">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="./admin-home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+          </ul>
+            <!-- for admin -->
+            <a routerLink="admin-login"><i class="fa-solid fa-toolbox fa-2x ps-4" style="color: #ffffff;"></i></a>
+
+          <!-- Modal for sign in -->
+
+      </div>
+      <!-- modal for registeration -->
+</div>
+</nav>
+
+
+<div class="text-center  m-5 p-5">
+    <h1 style="color: white;">Manage Movies</h1>
+    <div class="text-end">
+      <button (click)="addPage()" class="btn btn-dark p-2 ms-5">Add New Movie</button>
+    </div>
+    <table class="table table-striped-columns table-dark mt-5 p-5">
+      <thead>
+        <tr>
+          <th class="border p-3" scope="col">#</th>
+          <th class="border p-3" scope="col">Name</th>
+          <th class="border p-3" scope="col">Image</th>
+          <th class="border p-3" scope="col">Summary</th>
+          <th class="border p-3" scope="col">Revenue</th>
+          <th class="border p-3" scope="col">Rating</th>
+          <th class="border p-3" scope="col">Movie Duration</th>
+          <th class="border p-3" scope="col">Category</th>
+          <th class="border p-3" scope="col">Settings</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of pdata ,let j=index">
+          <td class="border p-3">{{j+1}}</td>
+          <td class="border p-3" >{{i.mname}}</td>
+          <td class="border p-3" >
+            <img style="height: 200px;" src={{i.image}} alt="">
+          </td>
+          <td class="border p-3" >{{i.description}}</td>
+          <td class="border p-3" >{{i.tprice}}</td>
+          <td class="border p-3" >{{i.rating}}</td>
+          <td class="border p-3" >{{i.tavailable}}</td>
+          <td class="border p-3" >{{i.catid}}</td>
+          <td class="border p-3">
+            <button (click)="editPage(i._id)" class="btn btn-dark mt-5" ><i class="fa-regular fa-pen-to-square"></i></button>
+            <button (click)="deleteMovie(i._id)" class="btn btn-dark mt-5" ><i class="fa-solid fa-trash-can"></i></button>
+          </td>
+        </tr>
+     </tbody>
+    </table>

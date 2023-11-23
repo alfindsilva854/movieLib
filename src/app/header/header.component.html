@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fa-2x " href="#!"><img src="https://i.postimg.cc/7L6Nn5R4/ICON.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <input class="form-control w-50 ms-5 " type="text" placeholder=" Search For Movies">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">About</a></li>
+        <!-- <li class="nav-item"><a class="nav-link" href="#contact">For More Details</a></li> -->
+      </ul>
+      <!-- <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                Sign up
+              </button> -->
+      <button type="button" routerLink="user-login" class="btn btn-outline-light ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Login
+      </button>
+      <!-- for admin -->
+      <a routerLink="admin-login"><i class="fa-solid fa-toolbox fa-2x ps-4" style="color: #ffffff;"></i></a>
+    </div>
+  </div>
+</nav>
+<!-- Modal for sign in -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">LOGIN</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h1 class="text-center">Login</h1>
+              
+              <form [formGroup]="userloginForm" class="text-center">
+                <input formControlName="email" class="form-control mt-3 text-center" name="user" id="us1" type="text" placeholder="Enter your Email">
+                <input formControlName="psw" class="form-control mt-3 text-center" name="pass" id="ps1" type="password" placeholder="Password">
+              </form>
+              <form class="text-center">
+                <input class="form-control mt-3 text-center" type="text" placeholder="Username">
+                <input class="form-control mt-3 text-center" type="password" placeholder="Password">
+              </form>
+            </div>
+            <div class="text-center m-3">
+              <button type="button" (click)="userlogin()" class="btn btn-outline-dark">Login</button><br>
+              <p>Not Registered Yet? <a routerLink="user-register">Register</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+<!-- Modal for about -->
+<!-- <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <input class="form-control mt-3" type="text" placeholder="Username">
+          <input class="form-control mt-3" type="password" placeholder="Password">
+        </form>
+      </div>
+      <div class="text-center m-3">
+        <button type="button" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- modal for registeration -->
+<!-- <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Sign Up</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <input class="form-control mt-3" type="text" placeholder="Enter Username">
+          <input class="form-control mt-3" type="password" placeholder="Password">
+          <input class="form-control mt-3" type="password" placeholder="ConfirmPassword">
+        </form>
+      </div>
+      <div class="text-center m-3">
+        <button type="button" class="btn btn-primary">Sign up</button>
+      </div>
+    </div>
+  </div>
+</div> -->

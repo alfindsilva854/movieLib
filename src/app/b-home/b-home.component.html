@@ -1,0 +1,220 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fa-2x " href="#!"><img src="https://i.postimg.cc/7L6Nn5R4/ICON.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+      <input [(ngModel)]="searchData" (keyup)="accessData($event)" class="form-control w-50 ms-5 " type="text" placeholder=" Search For Movies">
+      <a class="btn ms-2" href="#movies" ><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">About</a></li>
+      
+
+        <!-- <li class="nav-item"><a class="nav-link" href="#contact">For More Details</a></li> -->
+      </ul>
+      <!-- <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                Sign up
+              </button> -->
+     <div *ngIf="isloggedin()">
+        <button type="button" (click)="logout()" routerLink="user-login" class="btn btn-outline-light ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Logout
+        </button>
+     </div>
+      <!-- for admin -->
+      <a routerLink="admin-login"><i class="fa-solid fa-toolbox fa-2x ps-4" style="color: #ffffff;"></i></a>
+    </div>
+  </div>
+</nav>
+<!-- <app-header></app-header>--->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img style="width: 1726px; height: 640px;"
+        src="https://i.postimg.cc/Qx2XN2bY/357786715-596077065994909-2575130235924873347-n.png" class="d-block w-100 "
+        alt="...">
+    </div>
+    <div class="carousel-item">
+      <img style="width: 1726px; height: 640px;"
+        src="https://i.postimg.cc/sXbwRLLB/8-xmen-movie-poster-design.jpg" class="d-block w-100"
+        alt="...">
+    </div>
+    <div class="carousel-item">
+      <img style="width: 1726px; height: 640px;" src="https://i.postimg.cc/VkM1QyHt/Thalapathy-Vijays-Leo-Record-Breaking-Box-Office-Performance.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="container">
+  <div class="row text-center p-5">
+    <div (click)="categoryMovie(1)" style="border: 1px white solid; border-radius: 25px;" class="col-3 ms-5">
+      <h1 class="text-white">Action</h1>
+    </div>
+    <div (click)="categoryMovie(2)" style="border: 1px white solid; border-radius: 25px; " class="col-3 ms-5">
+      <h1 class="text-white">Comedy</h1>
+    </div>
+    <div (click)="categoryMovie(3)" style="border: 1px white solid; border-radius: 25px; " class="col-3 ms-5">
+      <h1 class="text-white">Horror</h1>
+    </div>
+    <div class="row text-center p-3">
+      <div class="col-3 ms-5"></div>
+      <div (click)="categoryMovie('')" style="border: 1px white solid; border-radius: 25px; " class="col-3 ms-5 mt-5">
+        <h1 class="text-white">AllMovies</h1>
+      </div>
+      <div class="col-3 ms-5 mt-5"></div>
+    </div>
+  </div>
+</div>
+<!-- card for Movies -->
+<div id="movies" class="row">
+  <div *ngFor="let i of catMovie | search:searchData:'mname'" class="p-5  col-lg-3 col-sm-6 col-12">
+    <div class="card card-hover" style="width: 18rem;">
+      <img src="{{i.image}}" class="card-img-top" alt="..." style="height: 350px; object-fit: cover;">
+      <div class="card-body">
+        <h1 class="card-title">{{i.mname}}</h1>
+        <!-- <p class="card-text">{{i.description}}</p> -->
+        <a routerLink="movie-view/{{i._id}}" (click)="viewPage()" class="btn btn-dark">View</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- card for other Movies -->
+
+<!-- <div class="ps-5  ms-5 mt-5">
+      <div class="row">
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img style="height: 350px;" src="https://i.postimg.cc/QVLK5sw4/Jawan-film-poster.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Title : JAWAN</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    view
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img style="height: 350px;" src="https://i.postimg.cc/rwqWVykg/p-avengersendgame-19751-e14a0104.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Title : Avengers End Game </h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    view
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div class="col-3">
+            <div  class="card" style="width: 18rem;">
+                <img style="height: 350px;" src="https://i.postimg.cc/LsgcF0yw/MV5-BZTNi-NDA4-Nm-Mt-NTEx-Ni00-Ym-Vi-LWJk-MDAt-MDAx-Nm-Rj-Y2-I2-NDVj-Xk-Ey-Xk-Fqc-Gde-QXVy-MDM2-NDM2-MQ-V1-FMjpg-UX1000.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Title : Transformers rise of beast</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    view
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img style="height: 350px;" src="https://i.postimg.cc/Bbb5RRp1/MV5-BMz-I0-Nm-Vk-Mj-Et-Ym-Y4-MS00-ZDMx-LTlk-Zm-Et-Mz-U4-MDQx-YTMz-Mj-U2-Xk-Ey-Xk-Fqc-Gde-QXVy-Mz-Q0-Mz-A0-NTM-V1-FMjpg-UX1000.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Title : Spiderman Across the spiderverse</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    view
+                  </button>
+                </div>
+              </div>
+        </div>
+      </div> -->
+<!-- second row -->
+<!-- <div class="row mt-5">
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img style="height: 350px;" src="https://i.postimg.cc/QVLK5sw4/Jawan-film-poster.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    view
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img style="height: 350px;" src="https://i.postimg.cc/QVLK5sw4/Jawan-film-poster.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    view
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img style="height: 350px;" src="https://i.postimg.cc/QVLK5sw4/Jawan-film-poster.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    view
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img style="height: 350px;" src="https://i.postimg.cc/QVLK5sw4/Jawan-film-poster.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    view
+                  </button>
+                </div>
+              </div>
+        </div>
+      </div>
+
+ </div> -->
+<!-- view if logged in -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 m-5" id="exampleModalLabel">LOGIN</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <input class="form-control mt-3" type="text" placeholder="Username">
+          <input class="form-control mt-3" type="password" placeholder="Password">
+        </form>
+      </div>
+      <div class="text-center m-3">
+        <button type="button" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </div>
+</div> -->

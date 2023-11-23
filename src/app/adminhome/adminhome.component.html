@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fa-2x " href="#!">Movie-Library</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- <input class="form-control w-50 ms-5 " type="text" placeholder=" Search For Movies"> -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">About</a></li>
+      
+
+        <!-- <li class="nav-item"><a class="nav-link" href="#contact">For More Details</a></li> -->
+      </ul>
+      <!-- <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                Sign up
+              </button> -->
+      <!-- <button type="button" (click)="logout()" routerLink="user-login" class="btn btn-outline-light ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Logout
+      </button> -->
+      <!-- for admin -->
+      <a routerLink="admin-login"><i class="fa-solid fa-toolbox fa-2x ps-4" style="color: #ffffff;"></i></a>
+    </div>
+  </div>
+</nav>
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fa-2x " href="#!">Movie-Library</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <input class="form-control w-50 ms-5 " type="text" placeholder=" Search For Movies">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+      </ul>
+      <a routerLink="admin-login"><i class="fa-solid fa-toolbox fa-2x ps-4" style="color: #ffffff;"></i></a>
+    </div>
+  </div>
+</nav> -->
+
+
+
+<div style="padding: 12%; border: 1px white solid; background-size: cover; background-image: url(https://i.postimg.cc/5t7hs4d2/dark-forest-wallpaper-1920x1080.jpg);"
+  >
+  <div class="row text-center" style="justify-content: center;">
+    <div class="col-2">
+      <div class="card bg-dark card-hover" (click)="usermng()" style="width: 18rem;">
+        <img height="400rem;" src="https://i.postimg.cc/tCbxzP3D/360-F-111047380-566-Wnv21-R7m-G0-O0-TNk-YPFh-BX9-FSx-Eh-G9.png" class="card-img-top" alt="">
+        <h3 class="text-white">USER MANGEMENT</h3>
+        <!-- <button (click)="usermng()" class="btn btn-dark m-3">User Management</button> -->
+      </div>
+    </div>
+    <div class="col-2">
+
+      <!-- <button (click)="moviemng()" class="btn btn-outline-light ms-3" >Movie Management</button> -->
+    </div>
+    <div class="col-2">
+      <div class="card bg-dark card-hover" (click)="moviemng()" style="width: 18rem;">
+        <img height="400rem;" src="https://i.postimg.cc/tJx7XvtF/cinema-camera-roll-film-logo-design-template-527727-210.jpg" class="card-img-top" alt="">
+        <h3 class="text-white">MOVIE MANGEMENT</h3>
+        <!-- <button (click)="moviemng()" class="btn btn- m-3" >Movie Management</button> -->
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fa-2x" href="#!"><img src="https://i.postimg.cc/7L6Nn5R4/ICON.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a href="admin-login"><i class="fa-solid fa-toolbox fa-2x" style="color: #ffffff; padding-left: 800px;"></i></a>
+      </div>
+    </div>
+  </nav>
+  <!-- background-image:url(https://i.postimg.cc/JzdwqypG/dark-forest-wallpaper-1920x1080.jpg)" -->
+<div style="padding: 200px; background-size: cover; background-image:url(https://i.postimg.cc/2SXcqpk2/sublime-wallpaper-5120x3200.jpg)" >
+    <h1 class="text-center mt-3 p-5" style="color: white;">User Sign up</h1>
+    <form style="background-color: rgba(0, 0, 0, 0.444);" [formGroup]="userRegisterForm" class="p-5  rounded text-center w-25 container">
+        <input formControlName="name" name="u1" id="un1" class="form-control mt-3 text-center mt-5" type="text" placeholder="Enter You Name">
+        <div *ngIf="this.userRegisterForm.get('name')?.errors && this.userRegisterForm.get('name')?.touched">
+            <p class="text-danger">Invalid name</p></div>
+        <input formControlName="email" name="u2" id="un2" class="form-control mt-3 text-center mt-5" type="text" placeholder="Username">
+        <div *ngIf="this.userRegisterForm.get('email')?.errors && this.userRegisterForm.get('email')?.touched">
+            <p class="text-danger">Invalid Email</p></div>
+        <input formControlName="psw" name="p1" id="ps1" class="form-control mt-3 text-center mt-5" type="password" placeholder="Password">
+        <div *ngIf="this.userRegisterForm.get('psw')?.errors && this.userRegisterForm.get('psw')?.touched">
+            <p class="text-danger">Invalid password</p></div>
+        <button (click)="register()" [disabled]="userRegisterForm.invalid" class="btn btn-outline-light mt-5">Sign Up</button>
+    </form>
+</div>

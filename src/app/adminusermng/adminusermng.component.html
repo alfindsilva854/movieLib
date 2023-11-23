@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fa-2x " href="#!">Movie-Library</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <input class="form-control w-50 ms-5 " type="text" placeholder=" Search For Movies">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="./admin-home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+      </ul>
+      <!-- for admin -->
+      <a routerLink="admin-login"><i class="fa-solid fa-toolbox fa-2x ps-4" style="color: #ffffff;"></i></a>
+
+    </div>
+  </div>
+</nav>
+
+
+<div class="text-center  m-5 p-5">
+  <h1 style="color: white;">Manage Users</h1>
+  <table class="table table-striped-columns table-dark mt-5 p-5">
+    <thead>
+      <tr>
+        <th class="border p-3" scope="col">#</th>
+        <th class="border p-3" scope="col">Name</th>
+        <th class="border p-3" scope="col">Email</th>
+        <th class="border p-3" scope="col">Password</th>
+        <th class="border p-3">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of users ,let j=index">
+        <td class="border p-3">{{j+1}}</td>
+        <td class="border p-3" >{{i.name}}</td>
+        <td class="border p-3" >{{i.email}}</td>
+        <td class="border p-3" >{{i.psw}}</td>
+        <td class="border p-3">
+          <button class="btn btn-dark mt-5" ><i class="fa-regular fa-pen-to-square"></i></button>
+          <button (click)="deleteUsers(i._id)" class="btn btn-dark mt-5" ><i class="fa-solid fa-trash-can"></i></button>
+        </td>
+      </tr>
+   </tbody>
+  </table>
+  </div>

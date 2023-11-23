@@ -1,0 +1,27 @@
+<!-- header -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fa-2x" href="#!"><img src="https://i.postimg.cc/7L6Nn5R4/ICON.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a href="admin-login"><i class="fa-solid fa-toolbox fa-2x" style="color: #ffffff; padding-left: 800px;"></i></a>
+    </div>
+  </div>
+</nav>
+<!-- header -->
+<div style="padding: 200px; background-size: cover; background-image:url(https://i.postimg.cc/2SXcqpk2/sublime-wallpaper-5120x3200.jpg)" >
+    <h1 class="text-center mb-5 pb-5" style="color: white;">User Login</h1>
+    <form style="background-color: rgba(0, 0, 0, 0.444);" [formGroup]="userloginForm" class="p-3 mt-5 rounded text-center w-25 container">
+        <input formControlName="email" name="user" id="us1" class="form-control mt-3 text-center mt-5" type="text" placeholder="Username">
+        <div *ngIf="this.userloginForm.get('email')?.errors && this.userloginForm.get('email')?.touched">
+          <p class="text-danger">Email incorrect</p></div>
+        <input formControlName="psw" name="pass" id="ps1" class="form-control mt-3 text-center mt-5" type="password" placeholder="Password">
+        <div *ngIf="this.userloginForm.get('psw')?.errors && this.userloginForm.get('psw')?.touched">
+          <p class="text-danger">password incorrect</p></div>
+        <button (click)="userlogin()" [disabled]="userloginForm.invalid" class="btn btn-outline-light mt-5">Login</button><br>
+        <p class="p-3 text-white">Not Registered Yet? <a href="user-register">Register</a></p>
+    </form>
+</div>

@@ -1,0 +1,16 @@
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div style="border: 1px yellow solid; border-radius: 25px;" class="w-50 p-5">
+        <form action="">
+            <input [(ngModel)]="pdata.mname" type="text" placeholder="Movie name" id="mn1" name="mname" class="form-control mt-3 text-center">
+            <input [(ngModel)]="pdata.description" type="text" placeholder="Movie description" id="md1" name="mdes" class="form-control mt-3 text-center">
+            <input [(ngModel)]="pdata.tprice" type="text" placeholder="Total Revenue" id="mt1" name="mtic" class="form-control mt-3 text-center">
+            <input [(ngModel)]="pdata.image" type="text" placeholder="Movie image" id="mimg1" name="mimg" class="form-control mt-3 text-center">
+            <input [(ngModel)]="pdata.rating" type="number" placeholder="Movie rating" id="mr1" name="mrat" class="form-control mt-3 text-center">
+            <input [(ngModel)]="pdata.tavailable" type="text" placeholder="Duration" id="mt2" name="mta" class="form-control mt-3 text-center">
+            <input [(ngModel)]="pdata.catid" type="number" placeholder="Category" id="ct" name="cta" class="form-control mt-3 text-center">
+          <div class="text-center">
+            <button (click)="editMovie()" class="btn btn-outline-light  mt-5" >Edit Movie</button>
+        </div>
+       </form>
+    </div>
+</div>
